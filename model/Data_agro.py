@@ -1,11 +1,13 @@
 import json
 class Patologia :
     
-    def __init__ (self,nome,nome_cientifico,classificador,descricao,acuracia,gravidade):
+    def __init__ (self,nome,nome_cientifico,classificador,
+                  descricao,sintomas,acuracia,gravidade):
         self.nome = nome
         self.nome_cientifico = nome_cientifico
         self.classificador = classificador
         self.descricao = descricao
+        self.sintomas = sintomas
         self.acuracia = acuracia
         #gravidades tera o peso entre 0.1 a 0.5 
         self.gravidade = gravidade

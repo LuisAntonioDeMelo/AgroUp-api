@@ -27,6 +27,7 @@ try:
     import numpy as np
     import flask
     import io
+    import random
 except Exception as e:    
     print("Some modules are misssings {}".format(e))
 
@@ -84,15 +85,16 @@ def predict_data():
             data["success"]= True
 
     return flask.jsonify(data)
-
+#rota fixa test
 @app.route("/agro/1",methods=['GET'])
 def retornaDados():
     #,nome,nome_cientifico,classificador,descricao,acuracia,gravidade
     pat = Patologia(
             "Olho de rã",
             "Cercospora Sojina",
-            "Tipo fungi ",
-            "Lorem ipusm dolor ament",
+            "Mycosphaerellaceae ",
+            "Considerada uma praga da cultura de soja, o fungo causa a doença conhecida com olho-de-rã e foi identificado no Brasil na década de 70 e desde então disseminou-se por todo o país. O patógeno tem a capacidade de desenvolver novas raças com muita facilidade. Somente no Brasil, são conhecidas mais de 20 raças. Sobrevive por algum tempo sobre restos culturais no campo, principalmente nas hastes, ou ainda, com maior frequência em sementes. O desenvolvimento da doença vai depender de alguns fatores, tais como chuvas frequentes, formação de orvalho, temperaturas durante a noite acima de 20 °C e a existência de inóculo do fungo na área. A disseminação no campo ocorre por meio de sementes infectadas ou contaminadas superficialmente e também por meio de restos culturais. A longas distâncias, as sementes são a principal forma de disseminação.",
+            "A infecção pode ocorrer em qualquer estágio de desenvolvimento da planta, sendo que os primeiros sintomas surgem a partir da fase de floração. Nas folhas, produz manchas arredondadas, bem definidas, medindo de 1 a 5 mm de diâmetro. Manchas a partir de 3 mm, inicialmente apresentam encharcamento, tornam-se cinza-esverdeado e posteriormente cinza a castanho-claro no centro e castanho-avermelhado nas margens. Manchas menores que 3 mm apresentam apenas coloração castanho-avermelhada, sem esporulação. Na face inferior das folhas, é comum que as manchas sejam mais escuras devido a esporulação. As manchas podem coalescer, dando origem a manchas maiores, irregulares e de coloração castanho-clara ou castanha-escura. No caso de ataques severos, as folhas amarelecem, murcham e caem prematuramente. Os sintomas nas vagens surgem já na fase de granação máxima, antes da maturação. Provoca manchas na forma de pontuações castanho-avermelhadas, ou ainda, manchas de encharcamento, medindo de 3 a 5 mm de diâmetro. Com o desenvolvimento da doença, essas manchas tornam-se cinza-claro a cinza-escuro ou castanho com a margem avermelhada. Pode provocar a abertura da vagem na região da sutura ou na extremidade da vagem, causando a germinação dos grãos verdes. As sementes infectadas tornam-se de coloração cinza a cinza-acastanhado, e surgem rachaduras no tegumento.",
             0.8055
             ,5)
     
@@ -127,7 +129,7 @@ api.add_resource(myApi,'/zip/<string:zip>')
 
 if __name__== '__main__':
     print(("**Recursos sendo inicialidados .... \n")
-          +"devBY: Luis Antônio--letthegreedtotheothers")
+          +"devBY: Luis Antônio")
     app.run(debug=True)
     
     
